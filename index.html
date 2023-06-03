@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DASHBIN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+  <style>
+
+    body {
+      font-family: monospace, sans-serif;
+      background-image: url("bg.webp");
+      min-height: 100vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .navbar {
+      background-color: #e68db8;
+      color: white;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #b20068;
+      transform: scale(2.0);
+    }
+
+    .navbar .logo {
+      display: inline-block;
+      margin-right: 20px;
+      margin-left: 80px;
+      padding: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar .logo:hover {
+      transform: rotate(360deg);
+    }
+
+    .navbar .navbar-nav {
+      margin-left: auto;
+      margin-right: 5;
+    }
+
+    .portfolio-item {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .portfolio-item img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-item h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .portfolio-item p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-item:hover h3 {
+      color: #e74c3c;
+    }
+
+    .profile-section {
+      background-color: #f5f5f5;
+      padding: 50px;
+    }
+
+    .profile-image {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-intro {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <a href="#" class="navbar-brand">
+      <a href="dashi.html" class="nav-link"> <img src="2.png" alt="Logo" class="logo" height="100"></a>
+
+    <section class = "nav"> 
+    <div class="navbar-nav">
+      
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    </nav>
+    <div class = "header">
+
+      <section id="about" class="container mt-5">
+        <h2>Hi! I'm Dashi,</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="profile-section">
+              <img src="p.jpg" alt="Profile" class="profile-image">
+              <div class="profile-intro">
+                <h3> 2nd Year BS-IT student of TUA </h3>
+                <p>"Hi, I'm Dashi aka Rianna. This is a sample portfolio in compliance for the final project of Interface Design for Mobile and Web"</p>
+              </div>
+            </div>
+          </div>
+  
+
+
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+  <script>
+    $(document).ready(function() {
+      $('a.nav-link').on('click', function(event) {
+        if (this.hash !== '') {
+          $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function() {
+        window.location.hash = hash;
+        $(hash).addClass('slide-up');
+      });
+    }
+        $('.project-btn').click(function(e) {
+  e.preventDefault();
+  var url = $(this).data('url');
+
+  window.location.href = url;
+});
+
+      });
+    });
+  </script>
+</body>
+</html>

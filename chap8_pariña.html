@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Bootstrap Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    #my-container {
+      border: 1px solid black;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-group">
+      <label for="width-input">Width:</label>
+      <input type="number" class="form-control" id="width-input" value="500">
+    </div>
+    <div class="form-group">
+      <label for="height-input">Height:</label>
+      <input type="number" class="form-control" id="height-input" value="500">
+    </div>
+    <div class="form-group">
+      <label>Text Style:</label>
+      <button type="button" class="btn btn-default" id="btn-size">Enlarge Text</button>
+      <button type="button" class="btn btn-default" id="btn-color">Text Color</button>
+      <button type="button" class="btn btn-default" id="btn-italic">Italicize</button>
+      <button type="button" class="btn btn-default" id="btn-bold">Bold</button>
+      <button type="button" class="btn btn-default" id="btn-bg">Background</button>
+    </div>
+    <div class="form-group">
+      <label>Reset Styles:</label>
+      <button type="button" class="btn btn-default" id="btn-size-reset">Reset Size</button>
+      <button type="button" class="btn btn-default" id="btn-color-reset">Reset Color</button>
+      <button type="button" class="btn btn-default" id="btn-bg-reset">Reset Background</button>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-default" id="btn-change-size">Change Container Size</button>
+      <button type="button" class="btn btn-default" id="btn-change-bg">Toggle Background</button>
+    </div>
+    <div id="my-container">
+      <p>I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot.
+         I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. 
+         I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. 
+         I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot.
+        I am Groot. I am Groot. I am Groot.
+        I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot.
+         I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. 
+         I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. 
+         I am Groot. I am Groot. I am Groot. I am Groot. I am Groot. I am Groot.
+        I am Groot. I am Groot. I am Groot.
+        </p>
+    </div>
+  </div>
+
+  <script>
+    var width = $('#width-input').val();
+    var height = $('#height-input').val();
+    //width and height initial
+    $('#my-container').css({
+      width: width + 'px',
+      height: height + 'px'
+    });
+
+    // change width and height
+    $('#btn-change-size').click(function() {
+      var newWidth = $('#width-input').val();
+      var newHeight = $('#height-input').val();
+      $('#my-container').css({
+        width: newWidth + 'px',
+        height: newHeight + 'px'
+      });
+    });
+
+//change text color
+    $('#btn-color').click(function() {
+      $('#my-container p').addClass('text-blue');
+    });
+
+//remove text color 
+    $('#btn-color-reset').click(function() {
+      $('#my-container p').removeClass('text-blue');
+    });
+    
+//text size
+        $('#btn-size').click(function() {
+    $('#my-container p').css('font-size', '30px');
+    });
+
+//reset font size 
+    $('#btn-size-reset').click(function() {
+        $('#my-container p').css('font-size', '');
+    });
+
+//italicize
+        var isItalic = false;
+    $('#btn-italic').on('click', function() {
+    if (!isItalic) {
+        $('#my-container p').css('font-style', 'italic');
+        isItalic = true;
+    } else {
+        $('#my-container p').css('font-style', '');
+        isItalic = false;
+    }
+    });
+
+    //bold
+    var isBold = false;
+    $('#btn-bold').on('click', function() {
+    if (!isBold) {
+        $('#my-container p').css('font-weight', 'bold');
+        isBold = true;
+    } else {
+        $('#my-container p').css('font-weight', '');
+        isBold = false;
+    }
+    });
+
+
+
+//change bg color
+    $('#btn-bg').click(function() {
+      $('#my-container').addClass('bg-pink');
+    });
+
+//remove bg color
+    $('#btn-bg-reset').click(function() {
+      $('#my-container').removeClass('bg-pink');
+    });
+
+//toggle bg
+    $('#btn-change-bg').click(function() {
+      $('#my-container').toggleClass('bg-pink');
+    });
+  </script>
+
+
+  <style>
+    .text-blue {
+      color: rgb(0, 60, 255);
+    }
+    .bg-pink {
+      background-color: rgb(207, 61, 144);
+    }
+  </style>
+
+</body>
+</html>
